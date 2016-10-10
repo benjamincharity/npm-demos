@@ -34,6 +34,10 @@ export class ToolbarController {
                 name: 'angular-imagesloaded',
                 state: 'imagesloaded',
             },
+            {
+                name: 'angular-string-interpolation',
+                state: 'interpolation',
+            },
         ];
 
     }

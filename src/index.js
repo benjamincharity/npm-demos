@@ -12,7 +12,7 @@ import './app/home/';
 import './app/angular-ratings/';
 import './app/angular-flickity/';
 import './app/angular-keypad/';
-//import './app/angular-calendar/';
+import './app/angular-calendar/';
 import './app/interpolation/';
 import './app/imagesloaded/';
 
@@ -30,7 +30,7 @@ angular.module('bc.NpmDemos', [
     'demo.ratings',
     'demo.flickity',
     'demo.keypad',
-    //'demo.calendar',
+    'demo.calendar',
     'demo.interpolation',
     'demo.imagesloaded',
 ])

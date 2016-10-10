@@ -27,7 +27,7 @@ export class InterpolationController {
         this.filteredString = this.$filter('bcInterpolation')(rawString2, values2);
 
 
-        this.string = rawString;
+        //this.string = rawString;
         this.values = values;
     }
 
