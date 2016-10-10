@@ -1,0 +1,22 @@
+.demo {
+
+  &__iphone {
+    background-image: url('/assets/images/iphone.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 590px;
+    position: relative;
+    width: 290px;
+
+    &-keypad {
+      background-color: #fff;
+      position: absolute;
+      bottom: 73px;
+      left: 21px;
+      right: 20px;
+    }
+  }
+
+}
+

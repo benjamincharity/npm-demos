@@ -1,0 +1,89 @@
+<md-card flex="80" flex-offset="10">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">angular-imagesloaded</span>
+      <span class="md-subhead">Demo</span>
+    </md-card-title-text>
+  </md-card-title>
+
+  <md-card-content class="imagesloaded">
+
+    <div flex="80" flex-offset="10">
+
+      <div
+        bc-imagesloaded=".selector-test"
+        bc-always-method="vm.selectorAlways(instance)"
+        bc-progress-method="vm.selectorProgress(instance, image)"
+        bc-debug="true"
+      >
+        <img
+          class="selector-test"
+          src="http://lorempixel.com/400/300"
+          alt=""
+        />
+        <img
+          class="selector-test"
+          src="http://lorempixel.com/410/310"
+          alt=""
+        />
+      </div>
+
+    </div>
+
+  </md-card-content>
+
+  <md-card-content class="imagesloaded" ng-if="false">
+
+    <div flex="80" flex-offset="10">
+      <h4>Background image w/selector</h4>
+
+      <div
+        bc-imagesloaded=".imagesloaded__bg"
+        bc-always-method="vm.backgroundAlways(instance)"
+      >
+        <div
+          class="imagesloaded__bg"
+          style="background-image: url(http://lorempixel.com/400/300)"
+        ></div>
+      </div>
+
+    </div>
+
+  </md-card-content>
+
+  <md-card-content class="imagesloaded" ng-if="false">
+
+    <div flex="80" flex-offset="10">
+      <h4>Single image</h4>
+
+      <img
+        bc-imagesloaded
+        bc-always-method="vm.singleAlways(instance)"
+        src="http://lorempixel.com/400/300"
+        alt=""
+      />
+
+  </md-card-content>
+
+  <md-card-content class="imagesloaded" ng-if="false">
+
+    <div flex="80" flex-offset="10">
+      <h4>Failure</h4>
+
+      <div
+        bc-imagesloaded=".failure-bg-test"
+        bc-always-method="vm.failureAlways(instance)"
+      >
+        <div
+          class="failure-bg-test"
+          style="background-image: url(/img/not/there.jpg)"
+        ></div>
+      </div>
+
+    </div>
+
+  </md-card-content>
+
+</md-card>
+
+

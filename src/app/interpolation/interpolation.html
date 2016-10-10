@@ -1,0 +1,46 @@
+<md-card flex="50" flex-offset="25">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Angular-String-Interpolation</span>
+      <span class="md-subhead">Demo</span>
+    </md-card-title-text>
+  </md-card-title>
+
+  <md-card-content>
+
+    <div layout="column" layout-align="center center">
+
+      <strong>Directive</strong>
+
+      <bc-interpolate
+        bc-string="Item 0 matches ${0}, item 1 matches ${1}, etc..."
+        bc-array="['ZERO', 'ONE']"
+      ></bc-interpolate>
+
+      <hr>
+
+      <strong>Service</strong>
+
+      <span data-ng-bind="vm.string"></span>
+
+      <hr>
+
+      <strong>Filter (Controller)</strong>
+
+      <span data-ng-bind="vm.filteredString"></span>
+
+      <hr>
+
+      <strong>Filter (DOM)</strong>
+
+      <span>
+        {{ "Neither ${0} nor ${1} nor ${2} nor gloom of ${3}..." | bcInterpolation:['🌨', '🌞', '🔥', '🌃'] }}
+      </span>
+
+    </div>
+
+  </md-card-content>
+
+</md-card>
+
+

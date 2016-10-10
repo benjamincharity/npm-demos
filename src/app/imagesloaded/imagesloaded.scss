@@ -1,0 +1,12 @@
+.imagesloaded {
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__bg {
+    border: 2px solid red;
+    height: 300px;
+    width: 400px;
+  }
+}

@@ -1,0 +1,18 @@
+<time
+  datetime="{{ day.date | date:'yyyy-MM-dd' }}"
+  class="bc-calendar__day-time"
+  title="{{ day.date }}"
+  data-ng-if="day.date"
+>
+
+  <span class="week--date">
+    {{ day.date | date:"d"}}
+  </span>
+
+  <span class="week--day">
+    {{ day.date | date:"EEEE"}}
+  </span>
+
+</time>
+
+

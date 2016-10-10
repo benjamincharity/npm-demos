@@ -1,0 +1,32 @@
+<md-card flex="80" flex-offset="10">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Angular-Keypad</span>
+      <span class="md-subhead">Demo</span>
+    </md-card-title-text>
+  </md-card-title>
+
+  <md-card-content>
+
+    <h3>Numbers: {{ vm.numbers }}</h3>
+
+    <div class="demo__iphone">
+
+      <div class="demo__iphone-keypad">
+        <bc-keypad
+          bc-number-model="vm.numbers"
+          bc-max-length="{{ vm.neededLength }}"
+          bc-left-button="backspace"
+          bc-right-button="submit"
+          bc-left-button-method="vm.buttonLeft($event, numbers)"
+          bc-right-button-method="vm.buttonRight($event, numbers)"
+          bc-empty-backspace-method="vm.backspaceWhenEmpty()"
+        ></bc-keypad>
+
+      </div>
+    </div>
+
+  </md-card-content>
+
+</md-card>
+

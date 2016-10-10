@@ -1,0 +1,59 @@
+<md-card flex class="u__mb--2">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Angular-Flickity</span>
+      <span class="md-subhead">Demo - Standard 2nd</span>
+    </md-card-title-text>
+  </md-card-title>
+
+  <md-card-content>
+    <h2>TEST</h2>
+
+    <a ui-sref="angular-flickity">Demo</a>
+
+    <div class="flickity">
+      <div
+        class="flickity__inner"
+        bc-flickity="{{ vm.flickityOptions }}"
+        id="baz"
+      >
+
+      <figure
+        class="flickity__slide  flickity__{{ $index }}"
+        data-ng-repeat="slide in vm.slides2 track by $index"
+      >
+        <img
+          class="flickity__slide-image"
+          data-flickity-lazyload="{{ ::slide }}"
+          alt=""
+        />
+      </figure>
+
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <md-button
+      class="md-raised"
+      bc-flickity-previous="true"
+      bc-flickity-id="bar"
+    >Previous</md-button>
+
+    <md-button
+      class="md-raised"
+      bc-flickity-next="true"
+      bc-flickity-id="bar"
+    >Next</md-button>
+
+    <br>
+    <br>
+
+    <md-button class="md-raised" data-ng-click="vm.selectCell('.flickity__6')">
+      GO
+    </md-button>
+  </md-card-content>
+
+</md-card>
+

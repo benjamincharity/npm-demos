@@ -1,0 +1,59 @@
+$flickity_ratio: 66.625%;
+
+.flickity {
+  position: relative;
+  width: 90%;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: $flickity_ratio;
+    width: 100%;
+  }
+
+  &__inner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  &__slide {
+    background: #333;
+    background-position: center center;
+    background-size: cover;
+    height: 200px;
+    margin-right: 10px;
+    overflow: hidden;
+    width: 66%;
+
+    // <div>
+    &-image {
+      display: block;
+      margin: 0 auto;
+      max-height: 100%;
+      max-width: 100%;
+      opacity: 0;
+      transition: opacity .4s;
+
+      &.flickity-lazyloaded,
+      &.flickity-lazyerror {
+        opacity: 1;
+      }
+    }
+
+    //&.is-selected {
+      //background: #ED2;
+    //}
+  }
+}
+
+
+
+.button {
+  position: relative;
+  z-index: 99;
+}
+
+

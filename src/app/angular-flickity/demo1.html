@@ -1,0 +1,42 @@
+<md-card flex class="u__mb--2">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Angular-Flickity</span>
+      <span class="md-subhead">Demo - Standard</span>
+    </md-card-title-text>
+  </md-card-title>
+
+  <md-card-content>
+    <h2>Demo 1</h2>
+
+    <div class="flickity">
+      <div
+        class="flickity__inner"
+        bc-flickity="{{ vm.flickityOptions }}"
+        id="htmlDirID"
+      >
+
+        <figure class="demo__slide" data-ng-repeat="slide in vm.slides track by $index">
+            <img data-ng-src="{{ ::slide }}" alt="" />
+        </figure>
+
+      </div>
+    </div>
+
+
+    <md-button
+      class="md-raised"
+      bc-flickity-previous
+      bc-flickity-id="htmlDirID"
+    >Previous</md-button>
+
+    <md-button
+      class="md-raised"
+      bc-flickity-next
+      bc-flickity-id="htmlDirID"
+    >Next</md-button>
+
+  </md-card-content>
+
+</md-card>
+

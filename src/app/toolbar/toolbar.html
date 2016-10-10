@@ -1,0 +1,36 @@
+<md-toolbar data-ng-controller="ToolbarController as vm" md-scroll-shrink="true">
+  <div class="md-toolbar-tools">
+
+    <span>
+      <md-menu>
+        <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open menu">
+          <md-icon md-svg-icon="menu"></md-icon>
+        </md-button>
+
+        <md-menu-content>
+
+          <md-menu-item
+            data-ng-repeat="demo in vm.demos track by $index"
+          >
+            <md-button
+              class="md-primary"
+              ui-sref="{{ ::demo.state }}"
+            >
+              {{ ::demo.name }}
+            </md-button>
+          </md-menu-item>
+
+        </md-menu-content>
+      </md-menu>
+    </span>
+
+
+    <span>
+      <h1>
+        Bower/NPM Demos
+      </h1>
+    </span>
+
+  </div>
+</md-toolbar>
+

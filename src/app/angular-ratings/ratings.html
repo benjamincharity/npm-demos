@@ -1,0 +1,23 @@
+<md-card flex="50" flex-offset="25">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Angular-Ratings</span>
+      <span class="md-subhead">Demo</span>
+    </md-card-title-text>
+  </md-card-title>
+
+  <md-card-content>
+
+    <h3>Current Value: {{ vm.rating.score }}</h3>
+
+    <div flex="40" flex-offset="30" style="font-size: 30px">
+      <bc-angular-ratings
+        bc-rating-value="vm.rating.score"
+        bc-read-only
+      ></bc-angular-ratings>
+    </div>
+
+  </md-card-content>
+
+</md-card>
+

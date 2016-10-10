@@ -1,0 +1,30 @@
+<md-card>
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Angular-JSON-Calendar</span>
+      <span class="md-subhead">Demo</span>
+    </md-card-title-text>
+  </md-card-title>
+
+  <md-card-content>
+
+    <div class="my-calendar">
+
+
+      <bc-calendar
+        class="bc-calendar--months"
+        bc-week-title-format="abbreviation"
+        bc-date-selected="vm.selected(date)"
+        bc-start-date="{{ vm.startDate }}"
+        bc-end-date="{{ vm.endDate }}"
+        bc-nesting-depth="month"
+        bc-day-template="{{ vm.monthsTemplate }}"
+      ></bc-calendar>
+
+
+    </div>
+
+  </md-card-content>
+
+</md-card>
+
