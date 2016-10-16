@@ -1,5 +1,26 @@
-
-
-
-
-
+/*
+ *$red: red;
+ *
+ *.my-calendar {
+ *
+ *  .bc-calendar {
+ *
+ *    .bc-calendar__month {
+ *      border: 2px solid $red;
+ *    }
+ *
+ *
+ *    .bc-calendar__week {
+ *      display: block;
+ *      flex: none;
+ *    }
+ *
+ *    .bc-calendar__day {
+ *      display: inline-block;
+ *      width: 50px;
+ *      height: 50px;
+ *    }
+ *  }
+ *
+ *}
+ */

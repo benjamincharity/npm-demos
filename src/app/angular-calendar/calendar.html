@@ -13,6 +13,10 @@
 
       <bc-calendar
         class="bc-calendar--months"
+        bc-nesting-depth="month"
+        bc-days="400"
+        bc-date-selected="vm.selected(date)"
+        bc-day-template="{{ vm.daysTemplateDay }}"
       ></bc-calendar>
 
 

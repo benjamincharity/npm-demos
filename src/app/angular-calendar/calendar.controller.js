@@ -14,6 +14,9 @@ export class CalendarController {
         this.horizontalDayTemplate = `<time datetime="{{ day.date | date:'yyyy-MM-dd' }}" class="bc-calendar__day-time" title="{{ day.date }}" data-ng-if="day.date"><span class="week--date">{{ day.date | date:"d"}}th</span><span class="week--day">{{ day.date | date:"EEEE"}}</span></time>`;
 
         this.daysTemplate = `<time datetime="{{ day.date | date:'yyyy-MM-dd' }}" class="bc-calendar__day-time" title="{{ day.date }}" data-ng-if="day.date"><span class="week--date">{{ day.date | date:"d"}}</span><span class="month">{{ day.date | date:"MMMM"}}</span></time>`;
+        this.daysTemplateSmall = `<time class="bc-calendar__day-time">{{ day.date | date:"MM/dd"}}</time>`;
+
+        this.daysTemplateDay = `<time datetime="{{ day.date | date:'yyyy-MM-dd' }}" class="bc-calendar__day-time" title="{{ day.date }}" data-ng-if="day.date"><span class="week--date">{{ day.date | date:"d"}}</span><span class="month">{{ day.date | date:"MMMM"}}</span></time>`;
 
         this.monthsTemplate = `<time datetime="{{ day.date | date:'yyyy-MM-dd' }}" class="bc-calendar__day-time" title="{{ day.date }}" data-ng-if="day.date"><span class="week--date">{{ day.date | date:"d"}}</span></time>`;
 
@@ -44,8 +47,8 @@ export class CalendarController {
          */
 
         const PAD = 3;
-        console.log('Item: ',
-            angular.toJson(this.bcCalendarService.padDaysLeft('2016-05-18T00:00:00.027Z', PAD)));
+        //console.log('Item: ',
+            //angular.toJson(this.bcCalendarService.padDaysLeft('2016-05-18T00:00:00.027Z', PAD)));
 
         /*
          *this.daysInMonth = this.bcCalendarService.getDaysInMonth(date);
