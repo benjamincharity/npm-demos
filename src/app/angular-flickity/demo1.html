@@ -12,11 +12,11 @@
     <div class="flickity">
       <div
         class="flickity__inner"
-        bc-flickity="{{ vm.flickityOptions }}"
+        bc-flickity
         id="htmlDirID"
       >
 
-        <figure class="demo__slide" data-ng-repeat="slide in vm.slides track by $index">
+        <figure class="flickity__slide" data-ng-repeat="slide in vm.slides track by $index">
             <img data-ng-src="{{ ::slide }}" alt="" />
         </figure>
 
