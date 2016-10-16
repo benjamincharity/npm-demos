@@ -6,6 +6,8 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
     module: {
+        // When an npm module is linked, this preLoader causes the webpack output of the module to
+        // be linted, throwing tons of errors
         preLoaders: [
             {
                 test: /\.js$/,
@@ -57,9 +59,6 @@ module.exports = {
             inject: true
         }),
         new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/)
-        //new webpack.ProvidePlugin({
-            //'window.moment': 'moment'
-        //}),
     ],
     postcss: () => [autoprefixer],
     debug: true,
