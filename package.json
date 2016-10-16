@@ -5,7 +5,7 @@
     "angular-aria": "^1.5.8",
     "angular-flickity": "^2.0.0",
     "angular-imagesloaded": "^0.2.0",
-    "angular-json-calendar": "^1.0.3",
+    "angular-json-calendar": "^2.0.0",
     "angular-keypad": "^2.0.4",
     "angular-material": "^1.1.1",
     "angular-material-icons": "^0.7.1",
@@ -74,18 +74,5 @@
     "serve:dist": "gulp serve:dist",
     "test": "gulp test",
     "test:auto": "gulp test:auto"
-  },
-  "eslintConfig": {
-    "globals": {
-      "expect": true
-    },
-    "root": true,
-    "env": {
-      "browser": true,
-      "jasmine": true
-    },
-    "extends": [
-      "xo-space/esnext"
-    ]
   }
 }
