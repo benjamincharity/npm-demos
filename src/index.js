@@ -15,6 +15,7 @@ import './app/angular-keypad/';
 import './app/angular-calendar/';
 import './app/interpolation/';
 import './app/imagesloaded/';
+import './app/angular-keybind/';
 
 import './index.scss';
 
@@ -33,6 +34,7 @@ angular.module('bc.NpmDemos', [
     'demo.calendar',
     'demo.interpolation',
     'demo.imagesloaded',
+    'demo.keybind',
 ])
     .config(routerConfig)
     .controller('ToolbarController', ToolbarController)
