@@ -1,3 +1,4 @@
+/* global process, __dirname */
 const webpack = require('webpack');
 const conf = require('./gulp.conf');
 const path = require('path');
@@ -11,16 +12,18 @@ module.exports = {
         preLoaders: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'eslint'
-            }
+                include: [
+                    path.resolve('src'),
+                ],
+                loader: 'eslint',
+            },
         ],
         loaders: [
             {
                 test: /.json$/,
                 loaders: [
-                    'json'
-                ]
+                    'json',
+                ],
             },
             {
                 test: /\.(css|scss)$/,
@@ -28,44 +31,46 @@ module.exports = {
                     'style',
                     'css',
                     'sass',
-                    'postcss'
-                ]
+                    'postcss',
+                ],
             },
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                include: [
+                    path.resolve('src'),
+                ],
                 loaders: [
                     'ng-annotate',
-                    'babel'
-                ]
+                    'babel',
+                ],
             },
             {
                 test: /.html$/,
                 loaders: [
-                    'html'
-                ]
+                    'html',
+                ],
             },
             {
                 test: /\.(ttf|eot|svg|jpg|gif|png|webp|woff|woff2|otf)([\?]?.*)$/,
-                loader: 'file-loader'
-            }
-        ]
+                loader: 'file-loader',
+            },
+        ],
     },
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.NoErrorsPlugin(),
         new HtmlWebpackPlugin({
             template: conf.path.src('index.html'),
-            inject: true
+            inject: true,
         }),
-        new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/)
+        new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/),
     ],
     postcss: () => [autoprefixer],
     debug: true,
     devtool: 'cheap-module-eval-source-map',
     output: {
         path: path.join(process.cwd(), conf.paths.tmp),
-        filename: 'index.js'
+        filename: 'index.js',
     },
-    entry: `./${conf.path.src('index')}`
+    entry: `./${conf.path.src('index')}`,
 };

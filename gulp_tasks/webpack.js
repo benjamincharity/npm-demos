@@ -1,3 +1,4 @@
+/* eslint-disable func-style, no-magic-numbers */
 const gulp = require('gulp');
 const gutil = require('gulp-util');
 
@@ -8,41 +9,41 @@ const gulpConf = require('../conf/gulp.conf');
 const browsersync = require('browser-sync');
 
 gulp.task('webpack:dev', done => {
-  webpackWrapper(false, webpackConf, done);
+    webpackWrapper(false, webpackConf, done);
 });
 
 gulp.task('webpack:watch', done => {
-  webpackWrapper(true, webpackConf, done);
+    webpackWrapper(true, webpackConf, done);
 });
 
 gulp.task('webpack:dist', done => {
-  webpackWrapper(false, webpackDistConf, done);
+    webpackWrapper(false, webpackDistConf, done);
 });
 
 function webpackWrapper(watch, conf, done) {
-  const webpackBundler = webpack(conf);
+    const webpackBundler = webpack(conf);
 
-  const webpackChangeHandler = (err, stats) => {
-    if (err) {
-      gulpConf.errorHandler('Webpack')(err);
-    }
-    gutil.log(stats.toString({
-      colors: true,
-      chunks: false,
-      hash: false,
-      version: false
-    }));
-    if (done) {
-      done();
-      done = null;
+    const webpackChangeHandler = (err, stats) => {
+        if (err) {
+            gulpConf.errorHandler('Webpack')(err);
+        }
+        gutil.log(stats.toString({
+            colors: true,
+            chunks: false,
+            hash: false,
+            version: false,
+        }));
+        if (done) {
+            done();
+            done = null;
+        } else {
+            browsersync.reload();
+        }
+    };
+
+    if (watch) {
+        webpackBundler.watch(200, webpackChangeHandler);
     } else {
-      browsersync.reload();
+        webpackBundler.run(webpackChangeHandler);
     }
-  };
-
-  if (watch) {
-    webpackBundler.watch(200, webpackChangeHandler);
-  } else {
-    webpackBundler.run(webpackChangeHandler);
-  }
 }
