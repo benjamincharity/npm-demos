@@ -17,8 +17,12 @@ export class KeybindController {
     }
 
 
-    method1() {
-        console.log('method1 called!');
+    method(event) {
+        console.log('method called! ', event);
+    }
+
+    method2(event, test) {
+        console.log('method2 called! ', event);
     }
 
 }
