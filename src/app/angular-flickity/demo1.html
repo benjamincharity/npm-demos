@@ -12,29 +12,48 @@
     <div class="flickity">
       <div
         class="flickity__inner"
-        bc-flickity
-        id="htmlDirID"
+        bc-flickity="{{ vm.flickityOptions }}"
+        id="demoId"
       >
 
-        <figure class="flickity__slide" data-ng-repeat="slide in vm.slides track by $index">
-            <img data-ng-src="{{ ::slide }}" alt="" />
+        <figure class="flickity__slide" data-ng-repeat="slide in vm.slides2 track by $index">
+            <img data-flickity-lazyload="{{ ::slide }}" alt="" />
         </figure>
 
       </div>
     </div>
 
 
+      <section class="log">
+        <ol>
+          <li ng-repeat="log in vm.logs track by log.id" ng-animate="'animate'">
+            Caught $emit:
+            <br>
+            <span class="log__highlight">
+                {{ ::log.name }}
+            </span>
+          </li>
+        </ol>
+      </section>
+
     <md-button
       class="md-raised"
       bc-flickity-previous
-      bc-flickity-id="htmlDirID"
+      bc-flickity-id="demoId"
     >Previous</md-button>
 
     <md-button
       class="md-raised"
       bc-flickity-next
-      bc-flickity-id="htmlDirID"
+      bc-flickity-id="demoId"
     >Next</md-button>
+
+
+
+    <md-button
+      class="md-raised md-warn"
+      data-ng-click="vm.triggerEvent()"
+    >Trigger Event</md-button>
 
   </md-card-content>
 

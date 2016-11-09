@@ -1,3 +1,5 @@
+import Flickity from 'flickity';
+import 'flickity-imagesloaded';
 import 'angular-flickity';
 import { FlickityRouterConfig } from './flickity.routes';
 import { FlickityController } from './flickity.controller';
